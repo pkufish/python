@@ -1,0 +1,27 @@
+import jieba
+import jieba.analyse
+import numpy
+import pandas
+from wordcloud import WordCloud, ImageColorGenerator
+from matplotlib import pyplot
+
+# 首先定义一段文本在变量article中
+article = "等库和工具的加持，Python 成为数据科学和机器学习领域的最优工具。有了这些强大工具，你还需要一个强大的 IDE 来支持这些库所具备的绘图、分析等所有功能。"
+数据分析可以发现行业内经济变化趋势，挖掘用户需求特点，预测行业发展趋势，识别服务中出现的问题和潜在风险，确保业务稳定可控运营，支持企业战略决策提供科学依据。
+
+数据分析包括数据采集、数据清洗、数据可视化、模型开发和实现，涉及统计、算法、计算机科学等多种领域的知识。
+"""
+
+# 使用jieba对article进行分词
+seg_list = jieba.cut(article, cut_all = False)
+# 分词后的结果做成字符串，方便后续处理
+words = " ".join(seg_list)
+
+# 生成词云
+# 生成一个wordcoud对象
+wordcloud = WordCloud().generate(words)
+
+# 显示图
+pyplot.imshow(wordcloud)
+pyplot.axis("off")
+pyplot.show()

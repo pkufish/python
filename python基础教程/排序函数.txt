@@ -1,0 +1,78 @@
+Python 提供了多种数组排序的方式：
+
+1、sort()函数：
+
+此函数用于对原列表进行排序。
+
+它有两个可选参数：
+
+reverse= True （表示降序排列）
+key =  len （表示按元素的长度进行排序）
+
+它的样例代码为：
+
+list1 = ["Python","Java","C++","PHP","HML","C#"]
+list1.sort()
+print ("Sort List : ", list1)
+
+输出结果：
+
+Sort List :  ['C#', 'C++', 'HML', 'Java', 'PHP', 'Python']
+
+2、sorted（）函数：
+
+此函数也用于对列表进行排序，但它不会修改原始列表，而sort()函数会更改原始列表。
+
+它也有两个可选参数：
+
+reverse= True （表示降序排列）
+key =  len （表示按元素的长度进行排序）
+
+它的样例代码为：
+
+list1 = ["Python",2,"Java","C++","PHP","HML","C#"]
+new_list = sorted(list1, reverse = True)
+print ("Sorted List : ", new_list)
+
+输出结果：
+
+Sorted List :  ['Python', 'PHP', 'Java', 'HML', 'C++', 'C#', 2]
+
+python 对数组的第二列排序
+1 条回复
+
+回复 王佐才(佐才): 
+python 对数组的第二列排序
+# 导入numpy模块
+import numpy as np
+
+# 初始化数组
+arr = [[6, 4, 9], [2, 3, 8], [5, 1, 7]]
+
+# 调用argsort()函数
+result = np.array(arr)[:, np.argsort(arr, axis=-1)[:, 1]]
+
+# 打印结果
+print(result)
+
+python sort函数对数组的第二列排序
+
+python sort函数对数组的第二列排序
+arr.sort(key=lambda x: x[1])
+
+python sort函数对数组的第二行升序，第三列降序
+
+python sort函数对数组的第二行升序，第三列降序
+import numpy as np
+
+arr = np.array([[3, 2, 1],
+                [6, 5, 4],
+                [9, 8, 7]])
+
+arr[1] = np.sort(arr[1])[::-1]
+arr[:,2] = np.sort(arr[:,2])
+
+print(arr)
+# array([[3, 2, 7],
+#        [6, 5, 4],
+#        [9, 8, 1]])
